@@ -1,0 +1,10 @@
+kafka-topics --bootstrap-server localhost:9092 --topic otp-topic --create --partitions 3 --replication-factor 1
+
+kafka-console-producer --bootstrap-server localhost:9092 --topic otp-topic --producer-property acks=all
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic otp-topic --from-beginning
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic keycloakEvents --from-beginning
+
+kafka-console-producer --bootstrap-server localhost:9092 --topic policy-enforcer --producer-property acks=all
+
